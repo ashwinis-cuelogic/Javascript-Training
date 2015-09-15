@@ -1,0 +1,45 @@
+<script>
+var basketModule = (function () {
+ 	var basket = [];
+ 
+  	// Return an object exposed to the public
+	 return {
+	    addItem: function( values ) {
+	      basket.push(values);
+	    },
+	 
+	    getItemCount: function () {
+	      return basket.length;
+	    },
+	 
+	    getTotal: function () {
+	       var q = this.getItemCount(),
+	          p = 0;
+	 
+	      while (q--) {
+	        p += basket[q].price;
+	      }
+	 
+	      return p;
+	    }
+	};
+})();
+
+basketModule.addItem({
+  item: "bread",
+  price: 0.5
+});
+ 
+basketModule.addItem({
+  item: "butter",
+  price: 0.3
+});
+ 
+document.writeln( basketModule.getItemCount() );
+document.writeln( basketModule.getTotal() );
+document.writeln( basketModule.basket ); //undefined as basket is not exposed as part of public API
+ 
+// This also won't work as it only exists within the scope of our
+// basketModule closure, but not in the returned public object
+document.writeln( basket );
+</script>
