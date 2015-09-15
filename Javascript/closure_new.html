@@ -1,0 +1,32 @@
+<script>
+var createPet = function(name){
+	var gender;
+	return {
+
+		setName : function(newName){
+			name = newName;
+		},
+
+		getName: function(){
+			return name;
+		},
+
+		setGender: function(newGender){
+			 if(typeof newGender == "string" && (newGender.toLowerCase() == "male" || newGender.toLowerCase() == "female")) {
+		        gender = newGender;
+		      }
+		},
+
+		getGender: function(){
+			return gender;
+		} 
+	}
+}
+
+var pet = createPet("Tom");
+document.writeln(pet.getName());
+pet.setName("Tommy");
+pet.setGender("male");
+document.writeln(pet.getName());
+document.writeln(pet.getGender());
+</script>

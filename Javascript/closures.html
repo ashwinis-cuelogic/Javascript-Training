@@ -1,0 +1,11 @@
+<script>
+var quo = function(status){
+	return {
+		get_status : function(){
+			return status;
+		}
+	}; 
+};
+var myQuo = quo("Surprised");
+document.writeln(myQuo.get_status());
+</script>
