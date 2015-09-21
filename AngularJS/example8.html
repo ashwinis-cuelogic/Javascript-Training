@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="nameApp">
+<head>
+	<title>Angular JS example</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script>
+		var nameApp = angular.module("nameApp",[]);
+		nameApp.controller("NamesController", ["$scope", function($scope){
+			$scope.countries = [
+				{"name": "China", "population": 1359821000},
+          		{"name": "India", "population": 1205625000},
+         		{"name": "USA","population": 312247000}
+			];
+		}]);
+	</script>
+</head>
+<body ng-controller="NamesController">
+	<table>
+      <tr>
+        <th>Country</th>
+        <th>Population</th>
+      </tr>
+      <tr ng-repeat="country in countries">
+        <td>{{country.name}}</td>
+        <td>{{country.population}}</td>
+      </tr>
+    </table>
+</body>
+</html>
