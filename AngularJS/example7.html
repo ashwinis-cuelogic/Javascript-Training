@@ -11,6 +11,10 @@
 			$scope.names.push($scope.enteredName);
 			$scope.enteredName = "";
 		};
+		$scope.removeName = function(name){
+			index = $scope.names.indexOf(name);
+			$scope.names.splice(index,1);
+		};
 	}])
 	</script>
 </head>
@@ -20,7 +24,9 @@
 		<input type="submit" value="Add Name">
 	</form>
 	<ul>
-		<li ng-repeat="name in names">{{name}}</li>
+		<li ng-repeat="name in names">{{name}}
+		<a href="" ng-click="removeName(name)">Remove</a>
+		</li>
 	</ul>
 </body>
 </html>
