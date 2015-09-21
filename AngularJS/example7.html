@@ -4,18 +4,18 @@
 	<title>Angular JS example</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 	<script>
-	var nameApp = angular.module("nameApp",[]);
-	nameApp.controller("NamesController",["$scope", function($scope){
-		$scope.names = ['Ashwini', 'Priya', 'Tushar', 'Amita', 'Sagar'];
-		$scope.addName = function(){
-			$scope.names.push($scope.enteredName);
-			$scope.enteredName = "";
-		};
-		$scope.removeName = function(name){
-			index = $scope.names.indexOf(name);
-			$scope.names.splice(index,1);
-		};
-	}])
+		var nameApp = angular.module("nameApp",[]);
+		nameApp.controller("NamesController",["$scope", function($scope){
+			$scope.names = ['Ashwini', 'Priya', 'Tushar', 'Amita', 'Sagar'];
+			$scope.addName = function(){
+				$scope.names.push($scope.enteredName);
+				$scope.enteredName = "";
+			};
+			$scope.removeName = function(name){
+				index = $scope.names.indexOf(name);
+				$scope.names.splice(index,1);
+			};
+		}]);
 	</script>
 </head>
 <body ng-controller="NamesController">
@@ -25,7 +25,7 @@
 	</form>
 	<ul>
 		<li ng-repeat="name in names">{{name}}
-		<a href="" ng-click="removeName(name)">Remove</a>
+			<a href="" ng-click="removeName(name)">Remove</a>
 		</li>
 	</ul>
 </body>
