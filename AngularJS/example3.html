@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Initializing the model using an Angular controller</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script>
+	myApp = angular.module("myApp",[]);
+	myApp.controller("NameController", ["$scope", function($scope){
+		$scope.firstName = "Ashwini";
+		$scope.lastName = "Gadakh";
+	}]);
+	</script>
+</head>
+<body ng-controller="NameController">
+	First Name: <input type="text" ng-model="firstName">
+	<br>
+	Last Name: <input type="text" ng-model="lastName">
+	<br>
+	Hello {{firstName}} {{lastName}}
+	<br>
+</body>
+</html>
