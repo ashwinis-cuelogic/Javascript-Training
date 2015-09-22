@@ -43,11 +43,11 @@
           })
       }]);
 
-    countryApp.controller('CountryDetailController', function ($scope, $routeParams, countries){
+    countryApp.controller('CountryDetailController', ["$scope", "$routeParams", "countries", function ($scope, $routeParams, countries){
         countries.find($routeParams.countryName, function(country) {
           $scope.country = country;
         });
-      });
+      }]);
 
     </script>
   </head>
